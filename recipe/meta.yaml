@@ -1,5 +1,5 @@
 {% set name = "brukerapi" %}
-{% set version = "0.1.6" %}
+{% set version = "0.1.8" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/brukerapi-{{ version }}.tar.gz
-  sha256: 413205dca566d6036359e6579449349373c06b4feff8b6b9952fa48243336471
+  sha256: 2bcfeedd65c859b4a2b4a670ea23a1ae19a3c5ad02ff3249f8f5b25a6b0027ce
 
 build:
   number: 0
