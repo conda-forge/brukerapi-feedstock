@@ -12,7 +12,7 @@ source:
   sha256: 451e41cb652a5a0b1c4b349c065b008dfe2e6b552072419ade9f9ef7d06b36eb
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - bruker=brukerapi.cli:main
   script: {{ PYTHON }} -m pip install . -vv
