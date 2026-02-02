@@ -24,8 +24,7 @@ requirements:
     - setuptools >=64
     - wheel
   run:
-    - python >={{ python_min }}
-    - numpy <2        # [py<39]
+    - numpy <1.25.0   # [py<39]
     - numpy >=1.26.0  # [py>=39]    
     - pyyaml
 
