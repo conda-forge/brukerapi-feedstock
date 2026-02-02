@@ -1,5 +1,6 @@
 {% set name = "brukerapi" %}
-{% set version = "0.1.9" %}
+{% set version = "0.2.0" %}
+{% set python_min = "3.10" %}
 
 
 package:
@@ -7,12 +8,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/brukerapi-{{ version }}.tar.gz
-  sha256: ff3d81c8e69b7a0e778a263f227a3bc5c9d3af82f2a267ea1871cc8ec00333f4
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/brukerapi-{{ version }}.tar.gz
+  sha256: 451e41cb652a5a0b1c4b349c065b008dfe2e6b552072419ade9f9ef7d06b36eb
 
 build:
   number: 0
-  noarch: python
   entry_points:
     - bruker=brukerapi.cli:main
   script: {{ PYTHON }} -m pip install . -vv
@@ -20,10 +20,13 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
+    - setuptools >=64
+    - wheel
   run:
-    - numpy
-    - python >=3.6
+    - python
+    - numpy <1.25.0   # [py<39]
+    - numpy >=1.26.0  # [py>=39]    
     - pyyaml
 
 test:
@@ -33,6 +36,7 @@ test:
     - pip check
     - bruker --help
   requires:
+    - python >={{ python_min }}    
     - pip
 
 about:
