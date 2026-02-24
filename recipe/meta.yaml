@@ -1,5 +1,5 @@
 {% set name = "brukerapi" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.2" %}
 {% set python_min = "3.10" %}
 
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/brukerapi-{{ version }}.tar.gz
-  sha256: 451e41cb652a5a0b1c4b349c065b008dfe2e6b552072419ade9f9ef7d06b36eb
+  sha256: 80211bd49c24dcce5b7337b58c8adc5511a709def3cf641799fef5215552f273
 
 build:
   number: 0
@@ -36,7 +36,7 @@ test:
     - pip check
     - bruker --help
   requires:
-    - python >={{ python_min }}    
+    - python >={{ python_min }}
     - pip
 
 about:
